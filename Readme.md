@@ -4,12 +4,19 @@ This project is a search engine made in html, css, js, json etc and aims to be a
 
 <h1>How to contribute?</h1>
 1. Create a fork of the repo.
+<br>
 2. Sync repo if needed.
+<br>
 3. Add your files.
+<br>
 4. Press contribute and 'open pull request'.
+<br>
 5. Name your pull request and description and press open.
+<br>
 6. Email me the Github link to your pull request anc attach a video proving it is not a virus using VMware/Proxmox and providing the link you got it from.
+<br>
 7. You're all done! just wait to be merged.
+<br>
 
 
 For a fun way to represent this Readme.md file, go to the ReadmeEncrypted.md to see for yourself. :) Have a nice day!

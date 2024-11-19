@@ -1,3 +1,9 @@
-[
-    {"name": "Windows 3", "path": "Assets/test.txt", "type": "txt"},
-]
+{
+  "files": [
+    {
+      "name": "text.txt",
+      "path": "Assets/text.txt",
+      "keywords": ["text", "file", "example"]
+    }
+  ]
+}

@@ -3,66 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azlecon - File Search Engine</title>
+    <title>Azlecon Search Engine</title>
     <link rel="stylesheet" href="modern.css">
 </head>
 <body>
-    <h1>Azlecon File Search Engine</h1>
-    <div id="search-container">
+    <div class="container">
+        <h1>Azlecon Search Engine</h1>
         <input type="text" id="search-input" placeholder="Search for files...">
-        <button id="search-button">Search</button>
+        <ul id="search-results"></ul>
     </div>
-    <ul id="results"></ul>
 
     <script>
         let files = [];
 
-        // Fetch the file data from search.json
-        fetch('search.json')
-            .then(response => response.json())
-            .then(data => {
-                files = data;
-            })
-            .catch(error => console.error('Error loading search.json:', error));
+        async function loadSearchData() {
+            try {
+                const response = await fetch('search.json');
+                const data = await response.json();
+                files = data.files;
+            } catch (error) {
+                console.error('Error loading search data:', error);
+            }
+        }
 
-        const searchInput = document.getElementById('search-input');
-        const searchButton = document.getElementById('search-button');
-        const resultsList = document.getElementById('results');
-
-        function searchFiles(query) {
+        function search(query) {
             return files.filter(file => 
-                file.name.toLowerCase().includes(query.toLowerCase()) ||
-                file.type.toLowerCase().includes(query.toLowerCase())
+                file.name.toLowerCase().includes(query) ||
+                file.keywords.some(keyword => keyword.toLowerCase().includes(query))
             );
         }
 
-        function displayResults(results) {
-            resultsList.innerHTML = '';
-            results.forEach(file => {
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const filteredFiles = search(query);
+
+            searchResults.innerHTML = '';
+            filteredFiles.forEach(file => {
                 const li = document.createElement('li');
-                li.className = 'result-item';
-                li.innerHTML = `
-                    <a href="${file.path}" download="${file.name}">
-                        ${file.name} (${file.type})
-                    </a>
-                `;
-                resultsList.appendChild(li);
+                const a = document.createElement('a');
+                a.href = file.path;
+                a.textContent = file.name;
+                a.download = file.name;
+                li.appendChild(a);
+                searchResults.appendChild(li);
             });
-        }
-
-        searchButton.addEventListener('click', () => {
-            const query = searchInput.value;
-            const results = searchFiles(query);
-            displayResults(results);
         });
 
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const query = searchInput.value;
-                const results = searchFiles(query);
-                displayResults(results);
-            }
-        });
+        loadSearchData();
     </script>
 </body>
 </html>

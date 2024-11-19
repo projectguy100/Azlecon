@@ -21,4 +21,5 @@ This project is a search engine made in html, css, js, json etc and aims to be a
 
 For a fun way to represent this Readme.md file, go to the ReadmeEncrypted.md to see for yourself. 
 <br>
+<br>
 :) Have a nice day!

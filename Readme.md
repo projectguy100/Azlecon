@@ -10,3 +10,5 @@ This project is a search engine made in html, css, js, json etc and aims to be a
 5. Name your pull request and description and press open.
 6. Email me the GitHub link to your pull request and attach a with a video proving it is not virus maybe using VMware/ProxMox.
 7. You're all done! Just wait to be merged.
+
+For a fun way to represent this Readme.md file, go to the ReadmeEncrypted.md to see for yourself. :) Have a nice day!

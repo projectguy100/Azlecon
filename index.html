@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azlecon - File Search Engine</title>
+    <link rel="stylesheet" href="modern.css">
+</head>
+<body>
+    <h1>Azlecon File Search Engine</h1>
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search for files...">
+        <button id="search-button">Search</button>
+    </div>
+    <ul id="results"></ul>
+
+    <script>
+        let files = [];
+
+        // Fetch the file data from search.json
+        fetch('search.json')
+            .then(response => response.json())
+            .then(data => {
+                files = data;
+            })
+            .catch(error => console.error('Error loading search.json:', error));
+
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const resultsList = document.getElementById('results');
+
+        function searchFiles(query) {
+            return files.filter(file => 
+                file.name.toLowerCase().includes(query.toLowerCase()) ||
+                file.type.toLowerCase().includes(query.toLowerCase())
+            );
+        }
+
+        function displayResults(results) {
+            resultsList.innerHTML = '';
+            results.forEach(file => {
+                const li = document.createElement('li');
+                li.className = 'result-item';
+                li.innerHTML = `
+                    <a href="${file.path}" download="${file.name}">
+                        ${file.name} (${file.type})
+                    </a>
+                `;
+                resultsList.appendChild(li);
+            });
+        }
+
+        searchButton.addEventListener('click', () => {
+            const query = searchInput.value;
+            const results = searchFiles(query);
+            displayResults(results);
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const query = searchInput.value;
+                const results = searchFiles(query);
+                displayResults(results);
+            }
+        });
+    </script>
+</body>
+</html>

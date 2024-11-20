@@ -24,6 +24,6 @@ For a fun way to represent this Readme.md file, go to the ReadmeEncrypted.md to 
 <br>
 
 <h1>Disclaimer</h1>
-This site is a historical site and if Microsoft has any issues then please email us.
+This site is a historical site and if Microsoft has any issues then please email us. This is like archive.org and winworldpc.com and DOES NOT aim to be illegal.
 
 :) Have a nice day!

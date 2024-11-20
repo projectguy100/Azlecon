@@ -42,8 +42,8 @@ h1 {
     background-color: #f9f9f9;
 }
 
-.version {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
+.version{
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
 }

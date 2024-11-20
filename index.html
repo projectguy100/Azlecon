@@ -7,76 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="search-container">
         <h1>Azlecon Search Engine</h1>
-        <form id="search-form">
-            <input type="search" id="search-input" placeholder="Search here...">
-            <button type="submit">Search</button>
-        </form>
+        <input type="text" id="search-input" placeholder="Search for files...">
         <div id="search-results"></div>
     </div>
-
-    <script>
-        document.getElementById('search-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var query = document.getElementById('search-input').value.toLowerCase();
-            searchSites(query);
-        });
-
-        function searchSites(query) {
-            fetch('files.json')
-                .then(response => response.json())
-                .then(data => {
-                    var results = data.filter(site => 
-                        site.title.toLowerCase().includes(query) || 
-                        site.content.toLowerCase().includes(query)
-                    );
-                    displayResults(results);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('search-results').innerHTML = 'An error occurred while searching. Try again later';
-                });
-        }
-
-        function displayResults(results) {
-            var resultsDiv = document.getElementById('search-results');
-            resultsDiv.innerHTML = '';
-            if (results.length === 0) {
-                resultsDiv.innerHTML = 'No results found.';
-            } else {
-                var ul = document.createElement('ul');
-                results.forEach(function(result) {
-                    var li = document.createElement('li');
-                    var a = document.createElement('a');
-                    a.href = result.url;
-                    a.textContent = result.title;
-                    li.appendChild(a);
-                    
-                    if (result.file) {
-                        var downloadBtn = document.createElement('button');
-                        downloadBtn.textContent = 'Download';
-                        downloadBtn.className = 'download-btn';
-                        downloadBtn.onclick = function() {
-                            downloadFile(result.file);
-                        };
-                        li.appendChild(downloadBtn);
-                    }
-                    
-                    ul.appendChild(li);
-                });
-                resultsDiv.appendChild(ul);
-            }
-        }
-
-        function downloadFile(filename) {
-            const link = document.createElement('a');
-            link.href = `Downloads/${filename}`;
-            link.download = filename;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
+    <script src="search.js"></script>
 </body>
 </html>

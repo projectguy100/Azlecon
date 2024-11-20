@@ -18,6 +18,9 @@ This project is a search engine made in html, css, js, json etc and aims to be a
 7. You're all done! just wait to be merged.
 <br>
 
+<h1>How to Reach Us</h1>
+You can email us at projectguy100@outlook.com / projectguy100@gmail.com, bitsandgizmosrepairco@gmail.com and thegeek1307@outlook.com
+
 
 For a fun way to represent this Readme.md file, go to the ReadmeEncrypted.md to see for yourself. 
 <br>

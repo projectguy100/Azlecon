@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Test",
+        "path": "Assets/test.txt"
+    },
+    {
+        "name": "Windows 3.1 ISO",
+        "path": "Assets/Windows 3.1/WINDOWS_3.1.ISO"
+    }
+]

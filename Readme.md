@@ -13,13 +13,13 @@ This project is a search engine made in html, css, js, json etc and aims to be a
 <br>
 5. Name your pull request and description and press open.
 <br>
-6. Email me the Github link to your pull request anc attach a video proving it is not a virus using VMware/Proxmox and providing the link you got it from.
+6. Email me the Github link to your pull request and attach a video proving it is not a virus using VMware/Proxmox and providing the link you got it from.
 <br>
 7. You're all done! just wait to be merged.
 <br>
 
 <h1>How to Reach Us</h1>
-You can email us at projectguy100@outlook.com / projectguy100@gmail.com, bitsandgizmosrepairco@gmail.com and thegeek1307@outlook.com
+You can email us at (main)projectguy100@outlook.com / projectguy100@gmail.com and thegeek1307@outlook.com(alternative).
 
 
 For a fun way to represent this Readme.md file, go to the ReadmeEncrypted.md to see for yourself. 
@@ -27,6 +27,6 @@ For a fun way to represent this Readme.md file, go to the ReadmeEncrypted.md to 
 <br>
 
 <h1>Disclaimer</h1>
-This site is a historical site and if Microsoft has any issues then please email us. This is like archive.org and winworldpc.com and DOES NOT aim to be illegal.
+This site is a historical site and if Microsoft has any issues then please email us. This is like archive.org and winworldpc.com and DOES NOT aim to be illegal. If there is any legal concern, please email us.
 
 :) Have a nice day!

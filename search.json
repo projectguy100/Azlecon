@@ -6,5 +6,9 @@
     {
         "name": "Windows 3.1 ISO",
         "path": "Assets/Windows 3.1/WINDOWS_3.1.ISO"
-    }
+    },
+    {
+        "name": "Testing 2 bat",
+        "path": "Assets/testing-2.bat
+    },
 ]
